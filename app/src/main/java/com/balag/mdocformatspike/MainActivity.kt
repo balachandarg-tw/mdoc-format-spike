@@ -22,6 +22,10 @@ import com.balag.mdocmocklibrary.api.RetrofitHelper
 import com.balag.mdocmocklibrary.mock.MockApi
 import kotlinx.coroutines.launch
 import androidx.compose.runtime.*
+import com.balag.mdocmocklibrary.mock.MockVcResponse
+import retrofit2.Call
+import retrofit2.Callback
+import retrofit2.Response
 
 
 class MainActivity : ComponentActivity() {
@@ -57,20 +61,44 @@ fun MainScreen( modifier: Modifier = Modifier) {
             modifier = modifier
         )
 
+//        Button(onClick = {
+//            val mockapi = RetrofitHelper().getInstance(context).create(MockApi::class.java)
+//
+//            scope.launch {
+//                val result = mockapi.getMockFormatVc()
+//                if (result != null){
+//                    Toast.makeText(context, "Hi ${result.body()}", Toast.LENGTH_LONG).show()
+//                    responseText = result.body().toString()
+//                    Log.d("balaggg--->: ", result.body().toString())
+//                }
+//
+//            }
+//        }) {
+//            Text(text = "Get Mock Data", fontSize = 24.sp)
+//        }
         Button(onClick = {
             val mockapi = RetrofitHelper().getInstance(context).create(MockApi::class.java)
 
-            scope.launch {
-                val result = mockapi.getMockFormatVc()
-                if (result != null){
-                    Toast.makeText(context, "Hi ${result.body()}", Toast.LENGTH_LONG).show()
-                    responseText = result.body().toString()
-                    Log.d("balaggg--->: ", result.body().toString())
+            val call = mockapi.getMockMDocFormatVC()
+            call.enqueue(object : Callback<MockVcResponse> {
+                override fun onResponse(call: Call<MockVcResponse>, response: Response<MockVcResponse>) {
+                    if (response.isSuccessful) {
+                        Toast.makeText(context, "Hello ${response.body()}", Toast.LENGTH_LONG).show()
+//                    responseText = result.body().toString()
+                    Log.d("balaggg--->: ", response.body().toString())
+                    } else {
+                        Log.d("balaggg--->Oops: ", response.body().toString())
+                        Toast.makeText(context, "Oooops ${response.body()}", Toast.LENGTH_LONG).show()
+                    }
                 }
 
-            }
+                override fun onFailure(call: Call<MockVcResponse>, t: Throwable) {
+                    Log.d("balaggg--->Error: "," response.body().toString()")
+                    Toast.makeText(context, "Failure", Toast.LENGTH_LONG).show()
+                }
+            })
         }) {
-            Text(text = "Get Mock Data", fontSize = 24.sp)
+            Text(text = "Get Mock Data without suspend", fontSize = 24.sp)
         }
 
         Text(
