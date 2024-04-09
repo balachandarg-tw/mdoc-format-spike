@@ -53,6 +53,10 @@ dependencies {
 
     implementation(project(":mdocmocklibrary"))
    // implementation(files("libs/mdocmocklibrary-debug.aar"))
+    implementation("com.android.identity:identity-credential:20231002")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.4.0")
+
+
 
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")

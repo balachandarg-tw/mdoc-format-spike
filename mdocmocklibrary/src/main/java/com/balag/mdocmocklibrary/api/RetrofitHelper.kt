@@ -10,8 +10,8 @@ class RetrofitHelper {
     val quotesBaseUrl = "https://quotable.io/"
     val dummyBaseUrl = "https://dummyjson.com/"
 
-    fun getInstance(context: Context): Retrofit {
-        val authInterceptor = AuthInterceptor(context)
+    fun getInstance(context: Context, accessToken: String? = null): Retrofit {
+        val authInterceptor = AuthInterceptor(context, accessToken)
         val okHttpClient = OkHttpClient.Builder()
             .addInterceptor(authInterceptor)
             .build()

@@ -5,11 +5,11 @@ import android.util.Log
 import okhttp3.Interceptor
 import okhttp3.Response
 
-class AuthInterceptor(context: Context) : Interceptor {
+class AuthInterceptor(context: Context, accessToken: String?) : Interceptor {
 
     val sharedPreference =  context.getSharedPreferences("DUMMY_DATA", Context.MODE_PRIVATE)
 
-    val authToken = sharedPreference.getString("access_token", "def")
+    val authToken = sharedPreference.getString("access_token", "def") //Pass accessToken
 
     override fun intercept(chain: Interceptor.Chain): Response {
 
