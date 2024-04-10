@@ -1,4 +1,4 @@
-//package com.balag.mdocformatspike
+package com.spike.mdocmocklibrary.mock
 //
 import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.SerialName

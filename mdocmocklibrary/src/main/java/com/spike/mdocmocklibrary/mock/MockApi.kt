@@ -1,12 +1,11 @@
-package com.balag.mdocmocklibrary.mock
+package com.spike.mdocmocklibrary.mock
 
-import IssuerAPIResponse
-import retrofit2.Call
+import com.spike.mdocmocklibrary.api.Constants
 import retrofit2.Response
 import retrofit2.http.GET
 
 interface MockApi {
-    @GET("/mDocFormatMock")
+    @GET(Constants.MOCK_DATA_END_POINT_URL)
     suspend fun getMockFormatVc() : Response<IssuerAPIResponse>
 
 }

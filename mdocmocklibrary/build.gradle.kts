@@ -1,11 +1,11 @@
 plugins {
     id("com.android.library")
     id("org.jetbrains.kotlin.android")
-    kotlin("plugin.serialization") version org.gradle.kotlin.dsl.embeddedKotlinVersion
+    kotlin("plugin.serialization") version embeddedKotlinVersion
 }
 
 android {
-    namespace = "com.balag.mdocmocklibrary"
+    namespace = "com.spike.mdocmocklibrary"
     compileSdk = 33
 
     defaultConfig {
@@ -40,12 +40,14 @@ dependencies {
     implementation("com.google.android.material:material:1.11.0")
 
 
+    //API call
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
-
     implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
+    //Parse CBOR Data
     implementation("co.nstant.in:cbor:0.9")
-    implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.4.0")
+
+    //Build Json Object
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
 
     testImplementation("junit:junit:4.13.2")

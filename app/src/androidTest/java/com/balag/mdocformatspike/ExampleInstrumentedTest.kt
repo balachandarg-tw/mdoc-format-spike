@@ -1,4 +1,4 @@
-package com.balag.mdocformatspike
+package com.spike.mdocformatspike
 
 import androidx.test.platform.app.InstrumentationRegistry
 import androidx.test.ext.junit.runners.AndroidJUnit4
@@ -19,6 +19,6 @@ class ExampleInstrumentedTest {
     fun useAppContext() {
         // Context of the app under test.
         val appContext = InstrumentationRegistry.getInstrumentation().targetContext
-        assertEquals("com.balag.mdocformatspike", appContext.packageName)
+        assertEquals("com.spike.mdocformatspike", appContext.packageName)
     }
 }

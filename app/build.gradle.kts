@@ -5,11 +5,11 @@ plugins {
 }
 
 android {
-    namespace = "com.balag.mdocformatspike"
+    namespace = "com.spike.mdocformatspike"
     compileSdk = 34
 
     defaultConfig {
-        applicationId = "com.balag.mdocformatspike"
+        applicationId = "com.spike.mdocformatspike"
         minSdk = 26
         targetSdk = 33
         versionCode = 1

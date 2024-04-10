@@ -1,4 +1,4 @@
-package com.balag.mdocformatspike.ui.theme
+package com.spike.mdocformatspike.ui.theme
 
 import androidx.compose.ui.graphics.Color
 

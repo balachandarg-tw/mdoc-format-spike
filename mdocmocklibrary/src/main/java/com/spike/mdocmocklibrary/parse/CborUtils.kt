@@ -1,26 +1,10 @@
-/*
- *  Copyright 2023 Google LLC
- *
- *  Licensed under the Apache License, Version 2.0 (the "License");
- *  you may not use this file except in compliance with the License.
- *  You may obtain a copy of the License at
- *
- *    http://www.apache.org/licenses/LICENSE-2.0
- *
- *   Unless required by applicable law or agreed to in writing, software
- *  distributed under the License is distributed on an "AS IS" BASIS,
- *  WITHOUT WARRANTIES OR CONDITIONS OF ANY KIND, either express or implied.
- *  See the License for the specific language governing permissions and
- *  limitations under the License.
- *
- */
+package com.spike.mdocmocklibrary.parse
 
-package com.balag.mdocmocklibrary.parse
-
-import ParsedVcResponse
 import co.nstant.`in`.cbor.CborDecoder
 import co.nstant.`in`.cbor.model.DataItem
 import co.nstant.`in`.cbor.model.MajorType
+import com.google.gson.Gson
+import com.spike.mdocmocklibrary.mock.ParsedVcResponse
 import kotlinx.serialization.decodeFromString
 import kotlinx.serialization.json.Json
 import kotlinx.serialization.json.JsonObject
@@ -28,8 +12,6 @@ import kotlinx.serialization.json.buildJsonObject
 import kotlinx.serialization.json.put
 import kotlinx.serialization.json.putJsonArray
 import java.io.ByteArrayInputStream
-import kotlin.collections.Map
-import kotlin.collections.set
 import co.nstant.`in`.cbor.model.Array as CborArray
 import co.nstant.`in`.cbor.model.ByteString as CborByteString
 import co.nstant.`in`.cbor.model.Map as CborMap
@@ -39,34 +21,9 @@ class CborUtils {
 
     companion object {
 
-        fun extractIssuerNamespacedElements(cborBytes: ByteArray): Map<String, String> {
-            val result = mutableMapOf<String, String>()
 
-            val cbors = CborDecoder(ByteArrayInputStream(cborBytes)).decode()
-
-            val elements =
-                cbors[0]["issuerSigned"]["nameSpaces"]["org.iso.18013.5.1"] as CborArray
-
-            for (item in elements.dataItems) {
-                val decoded =
-                    CborDecoder(ByteArrayInputStream((item as CborByteString).bytes)).decode()
-
-                val identifier = decoded[0]["elementIdentifier"].toString()
-                val value = decoded[0]["elementValue"]
-
-                if (value.majorType == MajorType.BYTE_STRING) {
-                    result[identifier] = "<bytes>";
-                } else {
-                    result[identifier] = value.toString()
-                }
-            }
-
-            return result
-        }
-
-        fun parseCborWithJsonResponse(cborBytes: ByteArray): JsonObject {
+        fun parseCborToGetJsonResponse(cborBytes: ByteArray): JsonObject {
             val jsonObjectResult = buildJsonObject {
-                //val result = mutableMapOf<String, String>()
 
                 val cbors = CborDecoder(ByteArrayInputStream(cborBytes)).decode()
 
@@ -85,7 +42,6 @@ class CborUtils {
                         MajorType.ARRAY -> {
                             val dpJsonObject = buildJsonObject {
                                 val drivingPrivileges = value.get(0)
-                                System.out.println("balaggg-issue_date->: ${drivingPrivileges["issue_date"]}")
                                 put("issue_date", drivingPrivileges["issue_date"].toString())
                                 put("expiry_date", drivingPrivileges["expiry_date"].toString())
                                 put("vehicle_category_code", drivingPrivileges["vehicle_category_code"].toString())
@@ -102,10 +58,17 @@ class CborUtils {
                 }
             }
 
+
+            //Optional to map json string to the data class
             val vcJsonObject = Json.decodeFromString<ParsedVcResponse>(jsonObjectResult.toString())
 
+            val gson = Gson()
+            val jsonString = gson.toJson(vcJsonObject)
+            System.out.println("Json String-->: $jsonString")
 
-            System.out.println("Json Object-family_name-->: ${vcJsonObject.familyName}")
+           // val jsonString = vcJsonObject.toString()
+            System.out.println("Json Object-->: ${vcJsonObject.toString()}")
+
             System.out.println("Json Object-driving-Vehicle category code->: ${vcJsonObject.drivingPrivileges.get(0).vehicleCategoryCode}")
             System.out.println("Json Object-expiry-->: ${vcJsonObject.drivingPrivileges.get(0).expiryDateDP}")
 

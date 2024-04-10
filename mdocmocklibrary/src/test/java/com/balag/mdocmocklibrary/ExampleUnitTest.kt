@@ -1,4 +1,4 @@
-package com.balag.mdocmocklibrary
+package com.spike.mdocmocklibrary
 
 import org.junit.Test
 

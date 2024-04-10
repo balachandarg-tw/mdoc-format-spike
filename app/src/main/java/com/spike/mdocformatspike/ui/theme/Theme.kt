@@ -1,4 +1,4 @@
-package com.balag.mdocformatspike.ui.theme
+package com.spike.mdocformatspike.ui.theme
 
 import android.app.Activity
 import android.os.Build

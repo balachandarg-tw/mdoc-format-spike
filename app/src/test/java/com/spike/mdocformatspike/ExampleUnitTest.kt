@@ -1,4 +1,4 @@
-package com.balag.mdocformatspike
+package com.spike.mdocformatspike
 
 import org.junit.Test
 
