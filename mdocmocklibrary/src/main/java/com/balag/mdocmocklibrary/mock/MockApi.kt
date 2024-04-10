@@ -9,5 +9,8 @@ interface MockApi {
     suspend fun getMockFormatVc() : Response<MockVcResponse>
 
     @GET("/mDocFormatMock")
+    suspend fun getMockCredential() : Response<MdlCredentialResponse>
+
+    @GET("/mDocFormatMock")
     fun getMockMDocFormatVC(): Call<MockVcResponse>
 }

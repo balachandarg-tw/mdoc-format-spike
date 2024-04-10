@@ -1,6 +1,7 @@
 plugins {
     id("com.android.application")
     id("org.jetbrains.kotlin.android")
+    kotlin("plugin.serialization") version org.gradle.kotlin.dsl.embeddedKotlinVersion
 }
 
 android {
@@ -53,13 +54,16 @@ dependencies {
 
     implementation(project(":mdocmocklibrary"))
    // implementation(files("libs/mdocmocklibrary-debug.aar"))
-    implementation("com.android.identity:identity-credential:20231002")
+    //implementation("com.android.identity:identity-credential:20231002")
     implementation("org.jetbrains.kotlinx:kotlinx-serialization-core:1.4.0")
+    implementation("org.jetbrains.kotlinx:kotlinx-serialization-json:1.4.0")
+    implementation("co.nstant.in:cbor:0.9")
 
+    implementation("org.jetbrains.kotlinx:kotlinx-io-bytestring:0.3.1")
 
 
     implementation("com.squareup.retrofit2:retrofit:2.9.0")
-    implementation("com.squareup.retrofit2:converter-gson:2.9.0")
+  //  implementation("com.squareup.retrofit2:converter-gson:2.9.0")
 
     implementation("androidx.core:core-ktx:1.9.0")
     implementation("androidx.lifecycle:lifecycle-runtime-ktx:2.7.0")

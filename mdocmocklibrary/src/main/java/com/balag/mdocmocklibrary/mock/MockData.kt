@@ -2,6 +2,14 @@ package com.balag.mdocmocklibrary.mock
 
 import com.google.gson.annotations.SerializedName
 
+
+data class MdlCredentialResponse(
+
+    @SerializedName("credential")
+    val credential: String,
+)
+
+
 data class MockVcResponse(
 
     @SerializedName("format")
