@@ -1,10 +1,17 @@
 //package com.balag.mdocformatspike
 //
+import com.google.gson.annotations.SerializedName
 import kotlinx.serialization.SerialName
 import kotlinx.serialization.Serializable
 
+data class IssuerAPIResponse(
+    @SerializedName("credential")
+    val credential: String,
+)
+
+
 @Serializable
-data class MDLVcResponse(
+data class ParsedVcResponse(
     @SerialName("given_name")
     val givenName: String,
     @SerialName("family_name")

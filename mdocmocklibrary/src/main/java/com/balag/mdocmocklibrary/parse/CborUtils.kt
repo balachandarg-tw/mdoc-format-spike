@@ -15,9 +15,9 @@
  *
  */
 
-package com.balag.mdocformatspike
+package com.balag.mdocmocklibrary.parse
 
-import MDLVcResponse
+import ParsedVcResponse
 import co.nstant.`in`.cbor.CborDecoder
 import co.nstant.`in`.cbor.model.DataItem
 import co.nstant.`in`.cbor.model.MajorType
@@ -102,7 +102,7 @@ class CborUtils {
                 }
             }
 
-            val vcJsonObject = Json.decodeFromString<MDLVcResponse>(jsonObjectResult.toString())
+            val vcJsonObject = Json.decodeFromString<ParsedVcResponse>(jsonObjectResult.toString())
 
 
             System.out.println("Json Object-family_name-->: ${vcJsonObject.familyName}")

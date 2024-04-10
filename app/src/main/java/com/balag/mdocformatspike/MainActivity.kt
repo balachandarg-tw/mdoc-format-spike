@@ -8,18 +8,25 @@ import androidx.activity.ComponentActivity
 import androidx.activity.compose.setContent
 import androidx.compose.foundation.layout.Column
 import androidx.compose.foundation.layout.fillMaxSize
+import androidx.compose.foundation.layout.padding
+import androidx.compose.foundation.rememberScrollState
+import androidx.compose.foundation.verticalScroll
 import androidx.compose.material3.Button
 import androidx.compose.material3.MaterialTheme
 import androidx.compose.material3.Surface
 import androidx.compose.material3.Text
 import androidx.compose.runtime.*
 import androidx.compose.ui.Modifier
+import androidx.compose.ui.graphics.Color
 import androidx.compose.ui.platform.LocalContext
+import androidx.compose.ui.text.font.FontWeight
 import androidx.compose.ui.tooling.preview.Preview
+import androidx.compose.ui.unit.dp
 import androidx.compose.ui.unit.sp
 import com.balag.mdocformatspike.ui.theme.MdocFormatSpikeTheme
 import com.balag.mdocmocklibrary.api.RetrofitHelper
 import com.balag.mdocmocklibrary.mock.MockApi
+import com.balag.mdocmocklibrary.parse.CborUtils
 import kotlinx.coroutines.launch
 
 
@@ -42,27 +49,28 @@ class MainActivity : ComponentActivity() {
 
 }
 
+
 @Composable
 fun MainScreen( modifier: Modifier = Modifier) {
 
     val context = LocalContext.current
     val scope = rememberCoroutineScope()
-    var responseText by remember { mutableStateOf("Empty Response") }
+    var responseText by remember { mutableStateOf("") }
     var base64URL by remember {
         mutableStateOf("")
     }
 
-    Column {
+    Column(modifier = Modifier.verticalScroll(rememberScrollState())) {
         Text(
-            text = "Spike for mDL format Credential",
-            modifier = modifier
+            text = "Spike for mdl/mDL Format",
+            modifier = modifier.padding(16.dp)
         )
 
-        Button(onClick = {
+        Button(modifier = Modifier.padding(16.dp),onClick = {
             val mockapi = RetrofitHelper().getInstance(context).create(MockApi::class.java)
 
             scope.launch {
-                val result = mockapi.getMockCredential()
+                val result = mockapi.getMockFormatVc()
                 if (result != null){
                     Toast.makeText(context, "API call is success ${result.body()}", Toast.LENGTH_LONG).show()
                     responseText = "Base64 url received from API------->"+result.body()?.credential.toString()
@@ -76,11 +84,11 @@ fun MainScreen( modifier: Modifier = Modifier) {
             Text(text = "API call to Issuer", fontSize = 24.sp)
         }
 
-        Button(onClick = {
+        Button(modifier = Modifier.padding(16.dp),onClick = {
             val result = parseMockData(context,base64URL)
-            responseText = result
+            responseText = "Parsed Data---->$result"
         }) {
-            Text(text = "Test MDOC Credential CBOR Utils", fontSize = 24.sp)
+            Text(text = "Decode and Parse", fontSize = 24.sp)
         }
 
         Text(
@@ -90,6 +98,7 @@ fun MainScreen( modifier: Modifier = Modifier) {
     }
 
 }
+
 
 fun parseMockData(context: Context, base64EncodedUrl: String): String {
 
