@@ -117,7 +117,7 @@ fun parseMockData(context: Context, base64EncodedUrl: String): String {
     val decodedData: ByteArray = Base64.decode(base64EncodedUrl, Base64.URL_SAFE)
 
 
-    val parsedJson = CborUtils.parseCborToGetJsonResponse(decodedData)
+    val parsedJson = CborUtils.decodeAndParseMDocData(decodedData)
     System.out.println("cborData in JSON------->$parsedJson")
     Toast.makeText(context, "Parsing is Done", Toast.LENGTH_LONG).show()
     return  parsedJson.toString()
