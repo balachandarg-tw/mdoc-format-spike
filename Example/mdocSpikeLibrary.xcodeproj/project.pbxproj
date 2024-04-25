@@ -3,7 +3,7 @@
 	archiveVersion = 1;
 	classes = {
 	};
-	objectVersion = 46;
+	objectVersion = 54;
 	objects = {
 
 /* Begin PBXBuildFile section */
@@ -14,6 +14,8 @@
 		607FACDD1AFB9204008FA782 /* Images.xcassets in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDC1AFB9204008FA782 /* Images.xcassets */; };
 		607FACE01AFB9204008FA782 /* LaunchScreen.xib in Resources */ = {isa = PBXBuildFile; fileRef = 607FACDE1AFB9204008FA782 /* LaunchScreen.xib */; };
 		607FACEC1AFB9204008FA782 /* Tests.swift in Sources */ = {isa = PBXBuildFile; fileRef = 607FACEB1AFB9204008FA782 /* Tests.swift */; };
+		C30FB4642BDA1306009FDBA5 /* SampleData.swift in Sources */ = {isa = PBXBuildFile; fileRef = C30FB4632BDA1306009FDBA5 /* SampleData.swift */; };
+		C30FB47D2BDA1A14009FDBA5 /* SwiftCBOR in Frameworks */ = {isa = PBXBuildFile; productRef = C30FB47C2BDA1A14009FDBA5 /* SwiftCBOR */; };
 		F5BB30ECE3BD745490A51DD8 /* Pods_mdocSpikeLibrary_Tests.framework in Frameworks */ = {isa = PBXBuildFile; fileRef = E853E368B02A0BB0018E885C /* Pods_mdocSpikeLibrary_Tests.framework */; };
 /* End PBXBuildFile section */
 
@@ -28,7 +30,7 @@
 /* End PBXContainerItemProxy section */
 
 /* Begin PBXFileReference section */
-		0362301284244A4F38E0565B /* mdocSpikeLibrary.podspec */ = {isa = PBXFileReference; includeInIndex = 1; name = mdocSpikeLibrary.podspec; path = ../mdocSpikeLibrary.podspec; sourceTree = "<group>"; };
+		0362301284244A4F38E0565B /* mdocSpikeLibrary.podspec */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = mdocSpikeLibrary.podspec; path = ../mdocSpikeLibrary.podspec; sourceTree = "<group>"; xcLanguageSpecificationIdentifier = xcode.lang.ruby; };
 		327BB26F5277EC6FF5038EE5 /* Pods-mdocSpikeLibrary_Example.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdocSpikeLibrary_Example.release.xcconfig"; path = "Target Support Files/Pods-mdocSpikeLibrary_Example/Pods-mdocSpikeLibrary_Example.release.xcconfig"; sourceTree = "<group>"; };
 		38E1DC850F88FE5C1468C494 /* Pods-mdocSpikeLibrary_Tests.release.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdocSpikeLibrary_Tests.release.xcconfig"; path = "Target Support Files/Pods-mdocSpikeLibrary_Tests/Pods-mdocSpikeLibrary_Tests.release.xcconfig"; sourceTree = "<group>"; };
 		607FACD01AFB9204008FA782 /* mdocSpikeLibrary_Example.app */ = {isa = PBXFileReference; explicitFileType = wrapper.application; includeInIndex = 0; path = mdocSpikeLibrary_Example.app; sourceTree = BUILT_PRODUCTS_DIR; };
@@ -42,11 +44,12 @@
 		607FACEA1AFB9204008FA782 /* Info.plist */ = {isa = PBXFileReference; lastKnownFileType = text.plist.xml; path = Info.plist; sourceTree = "<group>"; };
 		607FACEB1AFB9204008FA782 /* Tests.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = Tests.swift; sourceTree = "<group>"; };
 		62AB8B194B3417791358309A /* Pods-mdocSpikeLibrary_Tests.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdocSpikeLibrary_Tests.debug.xcconfig"; path = "Target Support Files/Pods-mdocSpikeLibrary_Tests/Pods-mdocSpikeLibrary_Tests.debug.xcconfig"; sourceTree = "<group>"; };
-		98B374EAEEDE424D1F6A6CD0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; name = README.md; path = ../README.md; sourceTree = "<group>"; };
+		98B374EAEEDE424D1F6A6CD0 /* README.md */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = net.daringfireball.markdown; name = README.md; path = ../README.md; sourceTree = "<group>"; };
 		A2066B38A2EAE04EB8CAFFEC /* Pods_mdocSpikeLibrary_Example.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mdocSpikeLibrary_Example.framework; sourceTree = BUILT_PRODUCTS_DIR; };
 		A70C9B1F58F62E48B3DDE69C /* Pods-mdocSpikeLibrary_Example.debug.xcconfig */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text.xcconfig; name = "Pods-mdocSpikeLibrary_Example.debug.xcconfig"; path = "Target Support Files/Pods-mdocSpikeLibrary_Example/Pods-mdocSpikeLibrary_Example.debug.xcconfig"; sourceTree = "<group>"; };
+		C30FB4632BDA1306009FDBA5 /* SampleData.swift */ = {isa = PBXFileReference; lastKnownFileType = sourcecode.swift; path = SampleData.swift; sourceTree = "<group>"; };
 		E853E368B02A0BB0018E885C /* Pods_mdocSpikeLibrary_Tests.framework */ = {isa = PBXFileReference; explicitFileType = wrapper.framework; includeInIndex = 0; path = Pods_mdocSpikeLibrary_Tests.framework; sourceTree = BUILT_PRODUCTS_DIR; };
-		F969EC5E7163E03787AFD4ED /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
+		F969EC5E7163E03787AFD4ED /* LICENSE */ = {isa = PBXFileReference; includeInIndex = 1; lastKnownFileType = text; name = LICENSE; path = ../LICENSE; sourceTree = "<group>"; };
 /* End PBXFileReference section */
 
 /* Begin PBXFrameworksBuildPhase section */
@@ -54,6 +57,7 @@
 			isa = PBXFrameworksBuildPhase;
 			buildActionMask = 2147483647;
 			files = (
+				C30FB47D2BDA1A14009FDBA5 /* SwiftCBOR in Frameworks */,
 				59FB9949428DDAB9A399B674 /* Pods_mdocSpikeLibrary_Example.framework in Frameworks */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -77,7 +81,6 @@
 				62AB8B194B3417791358309A /* Pods-mdocSpikeLibrary_Tests.debug.xcconfig */,
 				38E1DC850F88FE5C1468C494 /* Pods-mdocSpikeLibrary_Tests.release.xcconfig */,
 			);
-			name = Pods;
 			path = Pods;
 			sourceTree = "<group>";
 		};
@@ -111,6 +114,7 @@
 				607FACDC1AFB9204008FA782 /* Images.xcassets */,
 				607FACDE1AFB9204008FA782 /* LaunchScreen.xib */,
 				607FACD31AFB9204008FA782 /* Supporting Files */,
+				C30FB4632BDA1306009FDBA5 /* SampleData.swift */,
 			);
 			name = "Example for mdocSpikeLibrary";
 			path = mdocSpikeLibrary;
@@ -178,6 +182,9 @@
 			dependencies = (
 			);
 			name = mdocSpikeLibrary_Example;
+			packageProductDependencies = (
+				C30FB47C2BDA1A14009FDBA5 /* SwiftCBOR */,
+			);
 			productName = mdocSpikeLibrary;
 			productReference = 607FACD01AFB9204008FA782 /* mdocSpikeLibrary_Example.app */;
 			productType = "com.apple.product-type.application";
@@ -227,10 +234,14 @@
 			developmentRegion = English;
 			hasScannedForEncodings = 0;
 			knownRegions = (
+				English,
 				en,
 				Base,
 			);
 			mainGroup = 607FACC71AFB9204008FA782;
+			packageReferences = (
+				C30FB47B2BDA1A14009FDBA5 /* XCRemoteSwiftPackageReference "SwiftCBOR" */,
+			);
 			productRefGroup = 607FACD11AFB9204008FA782 /* Products */;
 			projectDirPath = "";
 			projectRoot = "";
@@ -291,10 +302,12 @@
 			);
 			inputPaths = (
 				"${PODS_ROOT}/Target Support Files/Pods-mdocSpikeLibrary_Example/Pods-mdocSpikeLibrary_Example-frameworks.sh",
+				"${BUILT_PRODUCTS_DIR}/SwiftCBOR/SwiftCBOR.framework",
 				"${BUILT_PRODUCTS_DIR}/mdocSpikeLibrary/mdocSpikeLibrary.framework",
 			);
 			name = "[CP] Embed Pods Frameworks";
 			outputPaths = (
+				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/SwiftCBOR.framework",
 				"${TARGET_BUILD_DIR}/${FRAMEWORKS_FOLDER_PATH}/mdocSpikeLibrary.framework",
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -332,6 +345,7 @@
 			buildActionMask = 2147483647;
 			files = (
 				607FACD81AFB9204008FA782 /* ViewController.swift in Sources */,
+				C30FB4642BDA1306009FDBA5 /* SampleData.swift in Sources */,
 				607FACD61AFB9204008FA782 /* AppDelegate.swift in Sources */,
 			);
 			runOnlyForDeploymentPostprocessing = 0;
@@ -468,7 +482,8 @@
 				IPHONEOS_DEPLOYMENT_TARGET = 9.3;
 				MTL_ENABLE_DEBUG_INFO = NO;
 				SDKROOT = iphoneos;
-				SWIFT_OPTIMIZATION_LEVEL = "-Owholemodule";
+				SWIFT_COMPILATION_MODE = wholemodule;
+				SWIFT_OPTIMIZATION_LEVEL = "-O";
 				VALIDATE_PRODUCT = YES;
 			};
 			name = Release;
@@ -479,7 +494,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = mdocSpikeLibrary/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -494,7 +513,11 @@
 			buildSettings = {
 				ASSETCATALOG_COMPILER_APPICON_NAME = AppIcon;
 				INFOPLIST_FILE = mdocSpikeLibrary/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+				);
 				MODULE_NAME = ExampleApp;
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.demo.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
@@ -516,7 +539,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -534,7 +562,12 @@
 					"$(inherited)",
 				);
 				INFOPLIST_FILE = Tests/Info.plist;
-				LD_RUNPATH_SEARCH_PATHS = "$(inherited) @executable_path/Frameworks @loader_path/Frameworks";
+				IPHONEOS_DEPLOYMENT_TARGET = 12.0;
+				LD_RUNPATH_SEARCH_PATHS = (
+					"$(inherited)",
+					"@executable_path/Frameworks",
+					"@loader_path/Frameworks",
+				);
 				PRODUCT_BUNDLE_IDENTIFIER = "org.cocoapods.$(PRODUCT_NAME:rfc1034identifier)";
 				PRODUCT_NAME = "$(TARGET_NAME)";
 				SWIFT_SWIFT3_OBJC_INFERENCE = Default;
@@ -574,6 +607,25 @@
 			defaultConfigurationName = Release;
 		};
 /* End XCConfigurationList section */
+
+/* Begin XCRemoteSwiftPackageReference section */
+		C30FB47B2BDA1A14009FDBA5 /* XCRemoteSwiftPackageReference "SwiftCBOR" */ = {
+			isa = XCRemoteSwiftPackageReference;
+			repositoryURL = "https://github.com/valpackett/SwiftCBOR.git";
+			requirement = {
+				branch = master;
+				kind = branch;
+			};
+		};
+/* End XCRemoteSwiftPackageReference section */
+
+/* Begin XCSwiftPackageProductDependency section */
+		C30FB47C2BDA1A14009FDBA5 /* SwiftCBOR */ = {
+			isa = XCSwiftPackageProductDependency;
+			package = C30FB47B2BDA1A14009FDBA5 /* XCRemoteSwiftPackageReference "SwiftCBOR" */;
+			productName = SwiftCBOR;
+		};
+/* End XCSwiftPackageProductDependency section */
 	};
 	rootObject = 607FACC81AFB9204008FA782 /* Project object */;
 }
