@@ -34,7 +34,6 @@ export const decodeAndParseCborData = () => {
 
     var validityInfo = parseValidityInfo(decodedCborData)
     resultObject["validityInfo"] = validityInfo
-    console.log("Result -->", resultObject)
     
     return resultObject
       

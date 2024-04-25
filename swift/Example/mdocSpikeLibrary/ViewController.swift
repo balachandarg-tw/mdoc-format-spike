@@ -13,10 +13,12 @@ import SwiftCBOR
 class ViewController: UIViewController {
     let library = CborLibrayUtils()
     
+    @IBOutlet weak var jsonResult: UILabel!
     @IBAction func parseMDocCBOR(_ sender: Any) {
         
         let parsedJson = library.decodeAndParseCBOR()
-        print("Parsed JSon From Library", parsedJson)
+        print("Parsed json From iOS Library", parsedJson)
+        jsonResult.text = "Parsed mDL VC in Json from iOS Library---->"+parsedJson
     }
     
     @IBOutlet weak var parseMDocCBOR: UIButton!
